@@ -3,7 +3,6 @@ import discord
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-# import seaocean(????) as sng 
 import random
 import kaggle
 import tempfile
