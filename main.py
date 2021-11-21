@@ -3,6 +3,7 @@ import discord
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+# import seaborn as sng 
 import random
 import kaggle
 import tempfile
@@ -16,7 +17,7 @@ client = discord.Client()
 USdata = pd.DataFrame(pd.read_csv(r'time_series_covid_19_confirmed_US.csv'))
 globalData = pd.DataFrame(pd.read_csv(r'time_series_covid_19_confirmed.csv'))
 mainData = pd.DataFrame(pd.read_csv(r'covid_19_data.csv'))
-with open('CovidFact.txt', 'r') as myfile:
+with open('CovidFacts.txt', 'r') as myfile:
   factData = myfile.readlines()
 
 xData = np.array(USdata.columns.tolist()[20:])
@@ -43,8 +44,9 @@ def compare_world(location1, location2):
     yData2 = np.append(yData2, globalData.loc[globalData['Country/Region'] == location2, dates].sum())
   
 
-  plt.plot(xDataGlobalCompare, np.log(yData1+1), 'r')
-  plt.plot(xDataGlobalCompare, np.log(yData2+1), 'b')
+  plt.plot(xDataGlobalCompare, yData1, 'r', label=location1)
+  plt.plot(xDataGlobalCompare, yData2+1, 'b', label=location2)
+  plt.legend()
   plt.xlabel=('Time Passed')
   plt.ylabel=('Confirmed COVID-19 Cases')
   plt.title('Comparative Graph of COVID-19 cases in '+ location1 +' vs ' + location2+' over Time')
@@ -63,8 +65,9 @@ def compare_US(state1, state2):
     yData2 = np.append(yData2, USdata.loc[USdata['Province_State'] == state2, dates].sum())
   
 
-  plt.plot(xData, np.log(yData1+1), 'r')
-  plt.plot(xData, np.log(yData2+1), 'b')
+  plt.plot(xData, yData1, 'k', label=state1)
+  plt.plot(xData, yData2, 'b', label=state2)
+  plt.legend()
   plt.xlabel=('Time Passed')
   plt.ylabel=('Confirmed COVID-19 Cases')
   plt.tick_params(axis = "x", which = "both", bottom = False, top = False)
