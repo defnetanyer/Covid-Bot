@@ -1,5 +1,5 @@
 # Covid-Bot
-Code written for Datathon,  Data Science Hackathon organized by the UWaterloo Data Science Club
+Code written for Datathon,  Data Science Hackathon organized by the UWaterloo Data Science Club. The bot is currently being hosted on Heroku (Nov 21, 2021).
 
 To run the code you need the following packages:
 - kaggle
