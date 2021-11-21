@@ -8,4 +8,4 @@ To run the code you need the following packages:
 - pyplot
 - discord
 
-https://discord.com/api/oauth2/authorize?client_id=911422531813130260&permissions=534858168384&scope=bot
+https://discord.com/api/oauth2/authorize?client_id=911422531813130260&permissions=535999020096&scope=bot
